@@ -33,7 +33,7 @@ interface PexelsAppApi {
 
     @GET("collections/featured")
     suspend fun getFeaturedCollections(
-        @Query("per_page") perPage: Int = PER_PAGE,
+        @Query("per_page") perPage: Int = FEATURED_PER_PAGE,
         @Header("Authorization") authorization: String = API_KEY
     ): FeaturedCollectionDto
 
