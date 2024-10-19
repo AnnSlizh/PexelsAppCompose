@@ -8,10 +8,7 @@ import kotlinx.coroutines.flow.Flow
 interface PhotoRepository {
 
     suspend fun getSearchPhotoList(query: String): Flow<Resource<List<Photo>>>
-
     suspend fun getCuratedPhotoList(): Flow<Resource<List<Photo>>>
-
     suspend fun getPhotoById(photoId: Int): Flow<Resource<Photo>>
-
-    suspend fun getFeaturedCollections(): Flow<Resource<List<FeaturedCollection>>>
+    suspend fun getFeaturedCollections(): Flow<Resource<FeaturedCollection>>
 }

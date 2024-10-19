@@ -1,8 +1,6 @@
 package by.slizh.pexelsappcompose.domain.model
 
-import com.google.gson.annotations.SerializedName
-
-data class Collection(
+data class CollectionModel(
     val id: Int,
     val title: String,
     val description: String,

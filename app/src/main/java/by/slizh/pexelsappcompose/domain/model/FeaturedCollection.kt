@@ -1,9 +1,7 @@
 package by.slizh.pexelsappcompose.domain.model
 
-import com.google.gson.annotations.SerializedName
-
 data class FeaturedCollection(
-    val collections: List<Collection>,
+    val collections: List<CollectionModel>,
     val page: Int,
     val perPage: Int,
     val totalResults: Int
