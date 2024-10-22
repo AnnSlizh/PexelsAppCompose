@@ -3,7 +3,7 @@ package by.slizh.pexelsappcompose.data.remote.dto
 import com.google.gson.annotations.SerializedName
 
 data class Collection(
-    val id: Int,
+    val id: String,
     val title: String,
     val description: String,
     val private: Boolean,

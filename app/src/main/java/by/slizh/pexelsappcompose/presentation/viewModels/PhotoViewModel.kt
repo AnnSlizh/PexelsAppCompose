@@ -1,5 +1,6 @@
 package by.slizh.pexelsappcompose.presentation.viewModels
 
+import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import by.slizh.pexelsappcompose.domain.model.Photo
@@ -23,6 +24,7 @@ class PhotoViewModel @Inject constructor(private val photoRepository: PhotoRepos
     init {
         onEvent(PhotoEvent.LoadCuratedPhotos)
         onEvent(PhotoEvent.LoadFeaturedCollections)
+
     }
 
     fun onEvent(event: PhotoEvent) {
@@ -63,11 +65,15 @@ class PhotoViewModel @Inject constructor(private val photoRepository: PhotoRepos
                     is Resource.Loading -> _state.value =
                         _state.value.copy(isLoading = result.isLoading)
 
-                    is Resource.Success -> _state.value =
-                        _state.value.copy(featuredCollection = result.data, isLoading = false)
+                    is Resource.Success ->
+                        _state.value = _state.value.copy(featuredCollection = result.data, isLoading = false)
 
-                    is Resource.Error -> _state.value =
-                        _state.value.copy(error = result.message, isLoading = false)
+
+                    is Resource.Error -> {
+                        _state.value =
+                            _state.value.copy(error = result.message, isLoading = false)
+                        Log.d("PhotoViewModel", "Getting featured collections: $result")
+                    }
                 }
 
             }

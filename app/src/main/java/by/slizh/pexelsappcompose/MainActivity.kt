@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
+import by.slizh.pexelsappcompose.presentation.screens.HomeScreen
 import by.slizh.pexelsappcompose.presentation.viewModels.PhotoViewModel
 import by.slizh.pexelsappcompose.ui.theme.PexelsAppComposeTheme
 import by.slizh.pexelsappcompose.ui.theme.White
@@ -27,7 +28,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             PexelsAppComposeTheme {
                 Surface(modifier = Modifier.fillMaxSize(), color = White) {
-                    val photoViewModel = hiltViewModel<PhotoViewModel>()
+                    HomeScreen()
                 }
             }
         }
