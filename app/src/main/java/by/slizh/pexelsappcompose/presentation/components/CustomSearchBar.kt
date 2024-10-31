@@ -4,7 +4,6 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
@@ -66,7 +65,6 @@ fun CustomSearchBar(
         modifier = Modifier
             .fillMaxWidth()
             .padding(start = 24.dp, top = 15.dp, end = 24.dp, bottom = 24.dp)
-            .statusBarsPadding()
             .background(
                 GrayLightTheme,
                 shape = RoundedCornerShape(50.dp)
