@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                         Modifier.padding(innerPadding)
                     ) {
                         composable(Screen.HomeScreen.route) { HomeScreen(navController) }
-                        composable(Screen.BookmarksScreen.route) { BookmarksScreen() }
+                        composable(Screen.BookmarksScreen.route) { BookmarksScreen(navController) }
                         composable(
                             route = Screen.DetailsScreen.route,
                             arguments = listOf(navArgument("photoId") { type = NavType.IntType })

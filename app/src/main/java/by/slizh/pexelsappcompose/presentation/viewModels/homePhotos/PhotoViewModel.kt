@@ -1,4 +1,4 @@
-package by.slizh.pexelsappcompose.presentation.viewModels
+package by.slizh.pexelsappcompose.presentation.viewModels.homePhotos
 
 import android.util.Log
 import androidx.lifecycle.ViewModel
@@ -31,7 +31,6 @@ class PhotoViewModel @Inject constructor(private val photoRepository: PhotoRepos
         when (event) {
             is PhotoEvent.LoadCuratedPhotos -> getCuratedPhotos()
             is PhotoEvent.SearchPhotos -> searchPhotos(event.query)
-            //  is PhotoEvent.LoadPhotoById -> getPhotoById(event.photoId)
             is PhotoEvent.LoadFeaturedCollections -> getFeaturedCollections()
             is PhotoEvent.SelectFeatureCollection -> selectFeaturedCollection(event.query)
 
@@ -51,12 +50,6 @@ class PhotoViewModel @Inject constructor(private val photoRepository: PhotoRepos
                 .collect { result -> getSearchPhotoResult(result) }
         }
     }
-
-//    private fun getPhotoById(photoId: Int) {
-//        viewModelScope.launch(Dispatchers.IO) {
-//            photoRepository.getPhotoById(photoId).collect{ result ->  }
-//        }
-//    }
 
     private fun getFeaturedCollections() {
         viewModelScope.launch(Dispatchers.IO) {

@@ -11,7 +11,6 @@ import by.slizh.pexelsappcompose.domain.model.CollectionModel
 import by.slizh.pexelsappcompose.domain.model.FeaturedCollection
 import by.slizh.pexelsappcompose.domain.model.Photo
 import by.slizh.pexelsappcompose.domain.model.SrcModel
-import com.google.gson.annotations.SerializedName
 
 fun PhotoDto.toPhoto(): Photo {
     return Photo(

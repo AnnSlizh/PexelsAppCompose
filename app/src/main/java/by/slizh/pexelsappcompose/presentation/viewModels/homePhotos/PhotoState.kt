@@ -1,4 +1,4 @@
-package by.slizh.pexelsappcompose.presentation.viewModels
+package by.slizh.pexelsappcompose.presentation.viewModels.homePhotos
 
 import by.slizh.pexelsappcompose.domain.model.FeaturedCollection
 import by.slizh.pexelsappcompose.domain.model.Photo
