@@ -21,9 +21,11 @@ class BookmarkRepositoryImpl @Inject constructor(private val bookmarksDatabase: 
             emit(Resource.Loading(true))
 
             val photoEntity = bookmarksDatabase.bookmarkDao().getBookmarkById(id)
-            emit(
-                Resource.Success(photoEntity.toPhoto())
-            )
+            if (photoEntity != null) {
+                emit(
+                    Resource.Success(photoEntity.toPhoto())
+                )
+            }
             emit(Resource.Loading(false))
             return@flow
         }

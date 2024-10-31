@@ -14,7 +14,7 @@ interface BookmarkDao {
     suspend fun insertBookmark(photo: PhotoEntity)
 
     @Query("SELECT * FROM bookmarks WHERE id=:id")
-    fun getBookmarkById(id: Int): PhotoEntity
+    fun getBookmarkById(id: Int): PhotoEntity?
 
     @Query("SELECT * FROM bookmarks ")
     fun getAllBookmarks(): List<PhotoEntity>
